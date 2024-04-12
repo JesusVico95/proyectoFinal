@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+.navbar-brand img{
+    width: 64px;
+    height: 64px ;
+}
+h1{
+    text-align: center;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.fotografia{
+    display: flex;
+    width: 350;
+    height: 350;
+}
+
+.titulo {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  }

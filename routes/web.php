@@ -11,6 +11,7 @@ use App\Http\Controllers\RandomController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CreateIngredientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,12 +42,12 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 //Ruta del login del usuario
 Route::post('/register', [LoginController::class, 'register'])->name('register');
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 //name-> lo que pasamos por route en los href.
 
 //Ruta para ir al calendario
-Route::post('/calendario', [CalendarioController::class, 'calendario'])->name('calendar');
+Route::get('/calendario', [CalendarioController::class, 'calendario'])->name('calendar');
 Route::get('/seleccionar-estacion', [CalendarioController::class, 'getSeason'])->name('getSeason');
 
 //Ruta de la tempoorada
@@ -62,10 +63,16 @@ Route::get('/aleatorio', [RandomController::class, 'randomRecipe'])->name('rando
 //Ruta de la foto de los productos de temporada
 Route::get('/foto', [FruitsandVegetablesController::class, 'takeStatus'])->name('takeStatus');
 
-//Ruta para agregar recetas SIN ACABAR.
+//Ruta para agregar recetas
 Route::get('/crear', [AddRecipeController::class, 'createRecipe'])->name('addRecipe');
 Route::post('/crear-guardar', [AddRecipeController::class, 'saveRecipe'])->name('save');
 
+//Ruta para agregar ingredientes
+Route::get('/crear-ingrediente',[AddRecipeController::class,'createIngredient'])->name('createIngredient');
+Route::post('/guardar-ingrediente',[AddRecipeController::class,'saveIngredient'])->name('saveIngredient');
+Route::post('/mostrar-ingrediente-guardado',[AddRecipeController::class,'successIngredient'])->name('successIngredient');
+
 //Rutas carro de la compra
-Route::get('/lista-compra', [CartController::class, 'vista'])->name('vista');
+Route::get('/lista-compra', [CartController::class, 'getAllList'])->name('getAllList');
 Route::post('/lista-compra/agregar', [CartController::class, 'addIngredient'])->name('addIngredient');
+Route::get('/lista-vacia',[CartController::class,'seeRemoveList'])->name('seeRemoveList');

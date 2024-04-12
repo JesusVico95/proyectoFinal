@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+.navbar-brand img{
+    width: 64px;
+    height: 64px ;
+}
+
+body{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.cantidad{
+    display: block;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
+    border-radius: 2px solid black;
+}
+
+.cabecera{
+    font-size: 25px;
+    font-family: "Josefin Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style:normal;
+    font-weight: bold;
+}
+
+.contenido{
+    font-family: "Graduate", serif;
+    font-weight: 400;
+    font-style: normal;   
+}
+
+.titulo {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  }

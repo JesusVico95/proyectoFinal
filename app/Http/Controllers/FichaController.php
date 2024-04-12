@@ -12,6 +12,7 @@ class FichaController extends Controller
 {
     public function datosFicha($id)
     {
+        
         $ingredients = $this->ingredients($id);
         $title = $this->title($id);
         $plate = $this->elaborate($id);

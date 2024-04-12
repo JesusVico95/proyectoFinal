@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('ingredient_plates', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('ingredient_id');
-            $table -> unsignedBigInteger('title_id');
-            $table->unsignedBigInteger('type_id');
+            $table->unsignedBigInteger('title_id');
+            $table->unsignedBigInteger('type_id')->nullable();
             $table->foreign('ingredient_id')->references('id')->on('ingredients');
             $table->foreign('title_id')->references('id')->on('plates');
             $table->foreign('type_id')->references('id')->on('alimentations');

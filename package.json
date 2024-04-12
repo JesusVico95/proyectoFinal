@@ -3,7 +3,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build"
-
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.2",
@@ -32,6 +31,7 @@
     "asynckit": "^0.4.0",
     "balanced-match": "^1.0.2",
     "binary-extensions": "^2.2.0",
+    "bootstrap": "^5.3.3",
     "brace-expansion": "^2.0.1",
     "braces": "^3.0.2",
     "browserslist": "^4.23.0",

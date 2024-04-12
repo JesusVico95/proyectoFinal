@@ -10,12 +10,24 @@ use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
-    public function vista(Request $request)
+    public function getAllList(Request $request)
     {
         $user_id = $this->getCurrentUserId($request);
         $lista = $this->getFullBuyList($user_id);
-        
-        return view('auth.list', compact('lista'));
+        $user_name = $request->user()->name;
+        $ingredient_type_colors = [
+            'Carne' => 'danger',
+            'Fruta' => 'success',
+            'Verdura' => 'success',
+            'Pescado' => 'info',
+            'Legumbres' => 'secondary',
+            'Lacteos' => 'primary',
+            'Pastas' => 'warning',
+            'Cereales' => 'warning',
+            'Otros' => 'secondary',
+        ];
+
+        return view('auth.list', compact('lista', 'user_name', 'ingredient_type_colors'));
     }
 
     public function addIngredient(Request $request)
@@ -24,7 +36,7 @@ class CartController extends Controller
         $ingredient = $this->validateIngredient($request->ingredient_id);
 
         $this->addIngredientToBuyList($user_id, $ingredient->id);
-        return redirect()->route('vista');
+        return redirect()->route('getAllList');
     }
 
     private function validateIngredient($ingredient_id)
@@ -71,7 +83,7 @@ class CartController extends Controller
             ->first();
 
         $buyList->quantity++;
-        $buyList->save(); 
+        $buyList->save();
     }
 
     private function createBuyListItem($user_id, $ingredient_id)
@@ -84,16 +96,30 @@ class CartController extends Controller
         $buyListItem->save();
     }
 
-    private function getFullBuyList($user_id){
-        return DB::table('categories')->select('categories.type_ingredient','ingredients.name','buy_lists.quantity')
-        ->join('ingredients', 'categories.id', '=', 'ingredients.category_id')
-        ->join('buy_lists', 'ingredients.id', '=', 'buy_lists.ingredient_id')
-        ->where('buy_lists.user_id','=',$user_id)
-        ->orderBy('categories.type_ingredient','asc')
-        ->orderBy('ingredients.name','asc')
-        ->distinct()
-        ->get();
+    private function getFullBuyList($user_id)
+    {
+        return DB::table('categories')->select('categories.type_ingredient', 'ingredients.name', 'buy_lists.quantity')
+            ->join('ingredients', 'categories.id', '=', 'ingredients.category_id')
+            ->join('buy_lists', 'ingredients.id', '=', 'buy_lists.ingredient_id')
+            ->where('buy_lists.user_id', '=', $user_id)
+            ->orderBy('categories.type_ingredient', 'asc')
+            ->orderBy('ingredients.name', 'asc')
+            ->distinct()
+            ->get();
+    }
+
+    private function removeFullBuyList($user_id)
+    {
+        return BuyList::select('quantity', 'ingredient_id')
+            ->where('user_id', '=', $user_id)
+            ->delete();
+    }
+
+    public function seeRemoveList(Request $request)
+    {
+        $user_id = $this->getCurrentUserId($request);
+        $deleteList = $this->removeFullBuyList($user_id);
+
+        return redirect()->route('getAllList', ['request' => $deleteList]);
     }
 }
-
-

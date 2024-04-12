@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto+Slab:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+:root{
+    --indigo:#6610f2;
+}
+.navbar-brand img{
+    width: 64px;
+    height: 64px ;
+}
+
+body{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido{
+    position: relative;
+    display: block;
+   
+}
+.boton{
+    position: absolute;
+    left: 100%;
+    bottom:19px;
+}
+.color{
+    background-color: var(--indigo);
+}
+
+
+.titulo {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+.subtitulo{
+    font-size: 25px;
+    font-family: "Josefin Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style:normal;
+    font-weight: bold;
+}
+.contenido{
+ 
+    font-family: "Graduate", serif;
+    font-weight: 400;
+    font-style: normal;   
+    margin-bottom: 10px;
+    margin-top: 25px;
+    margin-right: auto;
+}

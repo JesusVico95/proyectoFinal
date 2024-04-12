@@ -14,7 +14,6 @@ class CalendarioController extends Controller
 
     public function calendario()
     {
-
         return view('auth.calendario');
     }
 

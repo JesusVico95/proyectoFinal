@@ -25,7 +25,7 @@
             <div class="container py-5 h-100">
               <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-10">
-                  <div class="card rounded-3 text-black">
+                  <div class="text-black card rounded-3">
                     <div class="row g-0">
                       <div class="col-lg-6">
                         <div class="card-body p-md-5 mx-md-4">
@@ -33,29 +33,29 @@
                           <div class="text-center">
                             <img src="{{asset('assets/logo.jpg')}}"
                               style="width: 185px;" alt="logo">
-                            <h4 class="mt-1 mb-5 pb-1">Iniciar Sesión</h4>
+                            <h4 class="pb-1 mt-1 mb-5">Iniciar Sesión</h4>
                           </div>
           
-                          <form action="{{route('calendar')}}" method="POST">
+                          <form action="{{route('login')}}" method="POST">
                             @csrf
                             <p>Ingresa tu correo y contraseña</p>
           
-                            <div class="form-outline mb-4">
+                            <div class="mb-4 form-outline">
                                 <label class="form-label" for="form2Example11">Correo electrónico</label>
                               <input type="email" name="email" id="form2Example11" class="form-control"
                                 placeholder="Ingresa el correo" required />                            
                             </div>
           
-                            <div class="form-outline mb-4">
+                            <div class="mb-4 form-outline">
                                 <label class="form-label" for="form2Example22">Contraseña</label>
                               <input type="password" name="password" id="form2Example22" class="form-control" required/>
                             </div>
                             
-                            <div class="text-center pt-1 mb-5 pb-1">
-                              <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Registrarse</button>
+                            <div class="pt-1 pb-1 mb-5 text-center">
+                              <button class="mb-3 btn btn-primary btn-block fa-lg gradient-custom-2" type="submit">Iniciar sesión</button>
                             </div>
           
-                            <div class="d-flex align-items-center justify-content-center pb-4">
+                            <div class="pb-4 d-flex align-items-center justify-content-center">
                               <p class="mb-0 me-2">Aún no tienes cuenta?</p>
                               <a href="{{route('register')}}" class="btn btn-outline-danger">Crear Cuenta</a>
                             </div>
@@ -65,9 +65,9 @@
                         </div>
                       </div>
                       <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                        <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                        <div class="px-3 py-4 text-white p-md-5 mx-md-4">
                           <h4 class="mb-4">Qué cocino esta semana?</h4>
-                          <p class="small mb-0">Bienvenido a la primera web donde decidirás en qué estación
+                          <p class="mb-0 small">Bienvenido a la primera web donde decidirás en qué estación
                             del año estás para visualizar un menú semanal a base de productos de temporada.
                           </p>
                         </div>

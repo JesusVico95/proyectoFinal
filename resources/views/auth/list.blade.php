@@ -26,7 +26,7 @@
             <a class="nav-link" href="{{route('random')}}">Receta al azar</a>
           </li>
           <li class="px-lg-2 nav-item">
-            <a class="nav-link" href="{{route('getAllList')}}">Lista de ingredientes</a>
+            <a class="nav-link" href="{{route('getAllList')}}">Lista de la compra</a>
           </li>
           <li class="px-lg-2 nav-item">
             <a class="nav-link" href="{{route('takeStatus')}}">Verduras y Frutas de temporada</a>
@@ -34,10 +34,16 @@
           <li class="px-lg-2 nav-item">
             <a class="nav-link" href="{{route('addRecipe')}}">Agregar Receta</a>
           </li>
+          <li class="px-lg-2 nav-item">
+            <a class="nav-link" href="{{route('createIngredient')}}">Agregar Ingrediente</a>
+          </li>
+    <li class="px-lg-2 nav-item">
+            <a class="nav-link" href="{{route('logout')}}">Cerrar Sesion</a>
+          </li>
         </ul>
       </div>
     </div>
-  </nav>
+  </nav>  
 
     <h1 class="titulo">Lista de la compra de {{$user_name}}</h1>
     <div class="container text-center">

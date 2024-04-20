@@ -34,11 +34,16 @@
           <li class="px-lg-2 nav-item">
             <a class="nav-link" href="{{route('addRecipe')}}">Agregar Receta</a>
           </li>
+          <li class="px-lg-2 nav-item">
+            <a class="nav-link" href="{{route('createIngredient')}}">Agregar Ingrediente</a>
+          </li>
+    <li class="px-lg-2 nav-item">
+            <a class="nav-link" href="{{route('logout')}}">Cerrar Sesion</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-
 
    
       <h1 class="titulo">Frutas y Verduras de temporada</h1>

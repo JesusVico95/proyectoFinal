@@ -13,22 +13,20 @@
 - ✅ Extensible architecture for authentication or REST API
 
 ---
-
+```text
 ## 📁 Project Structure
-
 MyLaravelRecipes/
-├── app/         # Core application logic (Models, Controllers)
-├── bootstrap/   # Laravel framework bootstrap files
-├── config/      # Application configuration
-├── database/    # Migrations, seeders, factories
-├── public/      # Web root (index.php, assets)
-├── resources/   # Blade templates & views
-├── routes/      # Web & API routes (web.php, api.php)
-├── storage/     # Logs, cache, uploaded files
-├── tests/       # Automated tests (if available)
-└── vendor/      # Composer dependencies
-
-
+├── app/ # Core application logic (Models, Controllers)
+├── bootstrap/ # Laravel framework bootstrap files
+├── config/ # Application configuration
+├── database/ # Migrations, seeders, factories
+├── public/ # Web root (index.php, assets)
+├── resources/ # Blade templates & views
+├── routes/ # Web & API routes (web.php, api.php)
+├── storage/ # Logs, cache, uploaded files
+├── tests/ # Automated tests (if available)
+└── vendor/ # Composer dependencies
+```
 
 ## 🛠️ Installation
 
